@@ -1,0 +1,26 @@
+debug: false
+
+logging.level:
+  org.springframework.cloud.contract.stubrunner: DEBUG
+  org.springframework.cloud.kubernetes: DEBUG
+  org.springframework.data: DEBUG
+  org.springframework.web: DEBUG
+  com.vmware.tanzulabs.app: DEBUG
+
+spring:
+
+  application:
+    name: person-app
+
+  mvc:
+    log-request-details: true
+
+management:
+  endpoints:
+    web.exposure.include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+webservice:
+  order-resource-url: http://localhost:8081
