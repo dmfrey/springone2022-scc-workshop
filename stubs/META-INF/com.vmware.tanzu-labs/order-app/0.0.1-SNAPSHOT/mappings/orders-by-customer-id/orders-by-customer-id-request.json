@@ -1,0 +1,16 @@
+{
+  "id" : "8a8811cd-c97b-4314-8cbc-afca9692c927",
+  "request" : {
+    "urlPath" : "/orders/1",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "[{\"orderId\":\"f803c8fc-38ee-4949-8829-2c03d364d3ac\",\"customerId\":1}]",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template", "spring-cloud-contract" ]
+  },
+  "uuid" : "8a8811cd-c97b-4314-8cbc-afca9692c927"
+}

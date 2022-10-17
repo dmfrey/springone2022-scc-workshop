@@ -1,0 +1,10 @@
+request:
+  method: GET
+  url: /orders/1
+response:
+  status: 200
+  body:
+    - orderId: "f803c8fc-38ee-4949-8829-2c03d364d3ac"
+      customerId: 1
+  headers:
+    Content-Type: application/json

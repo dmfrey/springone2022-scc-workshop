@@ -15,11 +15,34 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-contract-verifier</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
 
         <plugins>
+
+            <plugin>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-contract-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <testFramework>JUNIT5</testFramework>
+                    <baseClassMappings>
+                        <baseClassMapping>
+                            <contractPackageRegex>.*orders-by-customer-id.*</contractPackageRegex>
+                            <baseClassFQN>com.vmware.tanzulabs.order.OrdersByCustomerIdBase</baseClassFQN>
+                        </baseClassMapping>
+                    </baseClassMappings>
+                    <outputDirectory>${maven.multiModuleProjectDirectory}/stubs</outputDirectory>
+                    <stubsDirectory>${maven.multiModuleProjectDirectory}/stubs</stubsDirectory>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.springframework.boot</groupId>
